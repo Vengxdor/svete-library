@@ -3,9 +3,22 @@
 @tailwind utilities;
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* color-scheme: light dark; */
   font-synthesis: none;
+}
+
+body{
+  margin: 0 20px;
+}
+
+.dark{
+  background: #161616;
+}
+
+.books {
+  display: grid;
+  width: 100%;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
