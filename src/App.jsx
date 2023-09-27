@@ -3,8 +3,8 @@ import React from 'react'
 import { Aside } from './components/Aside'
 import { Route, Routes } from 'react-router-dom'
 import AllBooks from './pages/Allbooks'
-import Featured from './pages/featured'
-import List from './pages/list'
+import Featured from './pages/Featured'
+import List from './pages/List'
 import Mode from './components/mode'
 
 function App() {
