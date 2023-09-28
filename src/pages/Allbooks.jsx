@@ -1,26 +1,22 @@
 import React, { useState } from 'react'
 import Tittle from '../components/tittle'
 import Filter from '../components/filter'
-import Books from '../books.json'
+import { useFiltered } from '../hooks/useFiltered'
 
 function AllBooks () {
-  const library = Books.library
+  const { filteredLibrary, handleFiltered } = useFiltered()
+  const [isMenuVisible, setMenuVisible] = useState(false)
+  const [menuPosition, setMenuPosition] = useState({ X: 0, Y: 0 })
 
-  const [filteredLibrary, setFilteredLibrary] = useState(library)
-
-  const handleFiltered = (filtered) => {
-    if (filtered === 'all') {
-      setFilteredLibrary(library)
-      // console.log('todo')
-    } else {
-      const filter = library.filter((books) => {
-        return books.book.genre === filtered
-      })
-      setFilteredLibrary(filter)
-    }
+  const handleCardClick = (event) => {
+    const { clientY, clientX } = event
+    setMenuPosition({ clientX, clientY })
+    setMenuVisible(true)
   }
-
-  // console.log(filteredLibrary)
+  /*
+    todo: make a popUp that came in the book that you select
+    todo: do that the popUp can be use to pass the books to another page
+  */
 
   return (
     <>
@@ -32,7 +28,7 @@ function AllBooks () {
           {filteredLibrary.map((books) => {
             books = books.book
             return (
-              <li className='book relative' key={books.ISBN}>
+              <li className='book relative' onClick={handleCardClick} key={books.ISBN}>
                 <img
                   className='object-cover aspect-[2/3]'
                   src={books.cover}
