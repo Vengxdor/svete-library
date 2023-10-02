@@ -7,7 +7,7 @@ function Filter ({ onFilterChange }) {
   }
 
   return (
-    <section className='border-y py-1'>
+    <section className='border-y py-1 dark:border-linesDark'>
       <select className='outline-none' onChange={handleFilterChange} name='genre'>
         <option value='All'>All</option>
         <option value='Fantasy'>Fantasy</option>

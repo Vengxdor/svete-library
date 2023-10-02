@@ -6,12 +6,17 @@ import AllBooks from './pages/Allbooks'
 import Featured from './pages/Featured'
 import List from './pages/List'
 import Mode from './components/mode'
+import { FaBook } from 'react-icons/fa6'
 
 function App() {
   return (
     <>
-      <header className='flex justify-between  items-center h-16 border-b   dark:text-white'>
+      <header className='flex justify-between  items-center h-16 border-b dark:border-linesDark  dark:text-white'>
+        <div className='flex items-center gap-1 '>
+        <FaBook/>
+
         <h1 className='text-lg font-semibold italic'>Svete</h1>
+        </div>
         <div className='flex items-center gap-3'>
           <Mode/>
           <img

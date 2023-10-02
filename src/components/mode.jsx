@@ -11,7 +11,7 @@ function Mode () {
   return (
         <i
         onClick={handleMode}
-        className='p-2 border rounded-lg cursor-pointer '
+        className='p-2 border rounded-lg cursor-pointer dark:border-linesDark'
       >
         {darkMode ? <FaSun /> : <FaMoon />}
       </i>
