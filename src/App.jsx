@@ -1,10 +1,10 @@
 /* eslint-disable space-before-function-paren */
 import React from 'react'
-import { Aside } from './components/Aside'
+import { Aside } from './components/aside'
 import { Route, Routes } from 'react-router-dom'
 import AllBooks from './pages/Allbooks'
-import Featured from './pages/Featured'
-import List from './pages/List'
+import Featured from './pages/featured'
+import List from './pages/list'
 import Mode from './components/mode'
 import { FaBook } from 'react-icons/fa6'
 
