@@ -5,18 +5,10 @@ import { useFiltered } from '../hooks/useFiltered'
 import { PopUp } from '../components/popUp'
 import { Book } from '../components/book'
 
-function AllBooks () {
-  const { filteredLibrary, handleFiltered } = useFiltered()
+export function usePopUpLocation () {
   const [menuPosition, setMenuPosition] = useState({ X: 0, Y: 0 })
   const [selectedBook, setSelectedBook] = useState(null)
-  // books in the list
-  // Initialize the list from localStorage if it exists, or as an empty array if not
-  const [list, setList] = useState(() => {
-    const storedList = localStorage.getItem('listBooks')
-    return storedList ? JSON.parse(storedList) : []
-  })
 
-  // localStorage.removeItem('listBook')
   const handleCardClick = (book, event) => {
     const { clientX, clientY } = event
     // Look at the book that is clicked
@@ -43,6 +35,26 @@ function AllBooks () {
   const closePopup = () => {
     setSelectedBook(null)
   }
+
+  return {
+    menuPosition,
+    handleCardClick,
+    closePopup,
+    selectedBook
+  }
+}
+
+function AllBooks () {
+  const { filteredLibrary, handleFiltered } = useFiltered()
+  const { menuPosition, handleCardClick, closePopup, selectedBook } = usePopUpLocation()
+
+  // Initialize the list from localStorage if it exists, or as an empty array if not
+  const [list, setList] = useState(() => {
+    const storedList = localStorage.getItem('listBooks')
+    return storedList ? JSON.parse(storedList) : []
+  })
+
+  // localStorage.removeItem('listBook')
 
   useEffect(() => {
     localStorage.setItem('listBooks', JSON.stringify(list))
