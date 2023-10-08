@@ -9,7 +9,7 @@ function List () {
   const storageBooks = localStorage.getItem('listBooks')
   const books = JSON.parse(storageBooks)
   const { addList, closePopup, menuPosition, selectedBook, handleCardClick } = usePopUp()
-  const { removeList } = useList()
+  const { removeList } = useList(selectedBook)
 
   return (
     <>
@@ -37,7 +37,7 @@ function List () {
           </>
             )
           : (
-          <p className='text-center'>There&apos;re no books in your list </p>
+          <p className='text-center dark:text-white'>There&apos;re no books in your list </p>
             )}
       </section>
     </>

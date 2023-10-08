@@ -23,19 +23,12 @@ export function useList (selectedBook) {
   }
 
   const removeList = () => {
-    const isBookInlist = list.some(
-      (bookInList) => bookInList.ISBN === selectedBook.ISBN
-    )
-    if (isBookInlist) {
-      // If the book is already in the list, remove it
-      const updatedList = list.filter(
-        (bookInList) => bookInList.ISBN !== selectedBook.ISBN
-      )
-      setList(updatedList)
-    } else {
-      // If the book is not in the list, add it
-      setList([...list, selectedBook])
-    }
+    // Remove the book from the list state
+    const updatedList = list.filter((bookInList) => bookInList.ISBN !== selectedBook.ISBN)
+    setList(updatedList)
+
+    // Update local storage
+    localStorage.setItem('listBooks', JSON.stringify(updatedList))
   }
 
   return { addList, removeList }
