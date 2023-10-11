@@ -12,12 +12,6 @@ function AllBooks () {
   const { menuPosition, handleCardClick, closePopup, selectedBook } = usePopUp()
   const { addList } = useList(selectedBook)
 
-  /*
-    // !error: you can add the same book multiple times to the list
-    // !error: when the book is in the second or third colum the popUp menu don't work
-    // TODO: do that the popUp can be use to pass the books to another page
-  */
-
   return (
     <>
       <Tittle>All Books</Tittle>
@@ -34,7 +28,7 @@ function AllBooks () {
         </ul>
 
         {selectedBook && (
-          <PopUp addList={addList} closePopup={closePopup} menuPosition={menuPosition}/>
+          <PopUp addList={addList} closePopup={closePopup} menuPosition={menuPosition} selectedBook={selectedBook}/>
         )}
       </section>
     </>

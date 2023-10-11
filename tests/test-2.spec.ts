@@ -1,0 +1,33 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('http://localhost:5173/');
+  await page.getByRole('combobox').selectOption('Fantasy');
+  await page.getByRole('combobox').selectOption('Science Fiction');
+  await page.getByRole('combobox').selectOption('Horror');
+  await page.getByRole('combobox').selectOption('Zombies');
+  await page.getByRole('combobox').selectOption('All');
+  await page.locator('li').filter({ hasText: 'The Lord of the RingsJ.R.R. Tolkien • 1954Fantasy' }).locator('span').nth(1).click();
+  await page.getByRole('button', { name: 'Add to list' }).click();
+  await page.locator('li').filter({ hasText: 'A Game of ThronesGeorge R. R. Martin • 1996Fantasy' }).locator('span').nth(1).click();
+  await page.getByRole('button', { name: 'Add to list' }).click();
+  await page.locator('li').filter({ hasText: 'Harry Potter and the Philosopher\'s StoneJ.K. Rowling • 1997Fantasy' }).locator('span').nth(1).click();
+  await page.getByRole('button', { name: 'Add to list' }).click();
+  await page.locator('li').filter({ hasText: '1984George Orwell • 1949Science Fiction' }).locator('span').nth(1).click();
+  await page.getByRole('button', { name: 'Add to list' }).click();
+  await page.getByRole('button', { name: 'Close' }).click();
+  await page.getByRole('link', { name: 'Your List' }).click();
+  await page.locator('li').filter({ hasText: 'The Lord of the RingsJ.R.R. Tolkien • 1954Fantasy' }).locator('span').nth(1).click();
+  await page.getByRole('button', { name: 'Remove from list' }).click();
+  await page.getByRole('button', { name: 'Remove from list' }).click();
+  await page.locator('span').filter({ hasText: 'Fantasy' }).first().click();
+  await page.locator('span').filter({ hasText: 'Fantasy' }).first().click();
+  await page.getByRole('button', { name: 'Remove from list' }).click();
+  await page.getByRole('button', { name: 'Remove from list' }).click();
+  await page.locator('span').filter({ hasText: 'Fantasy' }).first().click();
+  await page.getByRole('button', { name: 'Remove from list' }).click();
+  await page.locator('span').nth(1).click();
+  await page.getByRole('button', { name: 'Remove from list' }).click();
+  await page.locator('i').click();
+  await page.locator('i path').click();
+});

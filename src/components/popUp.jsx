@@ -1,8 +1,13 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
-import { FaPlay, FaPlus, FaX } from 'react-icons/fa6'
+import { FaCheck, FaPlay, FaPlus, FaX } from 'react-icons/fa6'
 
-export function PopUp ({ menuPosition, addList, removeList, closePopup }) {
+export function PopUp ({ menuPosition, addList, removeList, closePopup, selectedBook }) {
+  const isBookInList = (bookToCheck) => {
+    const storageBooks = JSON.parse(localStorage.getItem('listBooks')) || []
+    return storageBooks.some(book => book.ISBN === bookToCheck.ISBN)
+  }
+
   return (
     <>
       <div
@@ -14,14 +19,26 @@ export function PopUp ({ menuPosition, addList, removeList, closePopup }) {
           Preview
         </button>
         {addList &&
-        <button className='flex items-center' onClick={addList}>
-          <FaPlus className='mr-1' />
-          Add to list
+        <button onClick={addList}>
+          {isBookInList(selectedBook)
+            ? (
+              <span className='flex items-center gap-1'>
+                <FaCheck/>
+                Added
+              </span>
+              )
+            : (
+              <span className='flex items-center gap-1'>
+                <FaPlus/>
+                Add to list
+                </span>
+              )
+          }
         </button>
         }
         {removeList &&
         <button className='flex items-center' onClick={removeList}>
-          <FaPlus className='mr-1' />
+          <FaX className='mr-1' />
           Remove from list
         </button>
         }

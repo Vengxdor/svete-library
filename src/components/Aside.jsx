@@ -10,9 +10,6 @@ export function Aside () {
         <li className={`px-2 cursor-pointer rounded-md ${location.pathname === '/' && 'bg-activeLight'} ${location.pathname === '/' && 'dark:bg-activeDark text-black'}`}>
           <Link className='block' to='/'>All Books</Link>
         </li>
-        <li className={`px-2 cursor-pointer rounded-md ${location.pathname === '/Featured' && 'bg-activeLight'}  ${location.pathname === '/Featured' && 'dark:bg-activeDark text-black'}`}>
-          <Link className='block' to='/Featured'>Featured</Link>
-        </li>
         <li className={`px-2 cursor-pointer rounded-md ${location.pathname === '/List' && 'bg-activeLight'} ${location.pathname === '/List' && 'dark:bg-activeDark text-black'}`}>
           <Link className='block' to='/List'>Your List</Link>
         </li>
