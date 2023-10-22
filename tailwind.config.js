@@ -8,7 +8,7 @@ export default {
         lines: '#f8f8fb',
         activeLight: '#fcdb8d',
         activeDark: '#a1f4e9',
-        linesDark: '#1a1c1e'
+        linesDark: '#2f3336'
       }
     }
   },

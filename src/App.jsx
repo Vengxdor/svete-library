@@ -3,7 +3,7 @@ import React from 'react'
 import { Aside } from './components/aside'
 import { Route, Routes } from 'react-router-dom'
 import AllBooks from './pages/Allbooks'
-import List from './pages/list'
+import List from './pages/YourList'
 import Mode from './components/mode'
 import { FaBook } from 'react-icons/fa6'
 
