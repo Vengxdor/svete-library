@@ -1,6 +1,6 @@
 /* eslint-disable space-before-function-paren */
 import React from 'react'
-import { Aside } from './components/aside'
+import { Aside } from './components/Aside'
 import { Route, Routes } from 'react-router-dom'
 import AllBooks from './pages/Allbooks'
 import List from './pages/YourList'
