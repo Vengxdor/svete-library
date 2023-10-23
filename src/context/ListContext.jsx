@@ -14,6 +14,19 @@ export function ListProvider ({ children }) {
 
   useEffect(() => {
     localStorage.setItem('listOfBooks', JSON.stringify(listOfBooks)) // each time that the array change the value, is going to the localStorage
+
+    const handleStorageChange = (e) => {
+      if (e.key === 'listOfBooks') {
+        const updatedList = JSON.parse(localStorage.getItem('listOfBooks'))
+        console.log(updatedList)
+        setListOfBooks(updatedList)
+      }
+    }
+    window.addEventListener('storage', handleStorageChange)
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange)
+    }
   }, [listOfBooks])
 
   const addToList = book => {
@@ -31,7 +44,7 @@ export function ListProvider ({ children }) {
   const removeFromList = book => {
     const updatedList = listOfBooks.filter(bookInList => bookInList.ISBN !== book.ISBN)
     setListOfBooks(updatedList)
-    localStorage.removeItem('listOfBooks')
+    localStorage.setItem('listOfBooks', JSON.stringify(updatedList))
   }
 
   return (

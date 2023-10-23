@@ -24,7 +24,7 @@ Use the `books.json` file to obtain book data. You can add more books if you wis
 
 - [x] **Data Persistence**: The application should persist reading list data in the browser's local storage. When the page is reloaded, the reading list should be retained.
 
-- [ ] **Cross-Tab Synchronization**: If a user opens the application in two different tabs, changes made in one tab should be reflected in the other, without the need for a backend.
+- [x] **Cross-Tab Synchronization**: If a user opens the application in two different tabs, changes made in one tab should be reflected in the other, without the need for a backend.
 
 - [ ] **Deployment**: The application should be deployed on a free hosting service (Netlify, Vercel, Firebase, etc.) and should be accessible via a public URL. Provide the URL in the README.
 
