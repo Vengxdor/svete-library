@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import Tittle from '../components/tittle'
-import { ListContext } from '../context/list'
+import { ListContext } from '../context/ListContext'
 import { useList } from '../hooks/useList'
 
 function List () {

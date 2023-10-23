@@ -19,7 +19,7 @@ body{
 .books {
   display: grid;
   width: 100%;
-  gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 

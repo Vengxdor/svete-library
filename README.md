@@ -1,60 +1,54 @@
-## Contexto
+## Context
 
-Somos un sello editorial de libros multinacional. Queremos ofrecer a nuestro público una forma de ver nuestro catálogo y poder guardar los libros que les interesan en una lista de lectura.
+We are a multinational book publishing company. We want to provide our audience with a way to browse our catalog and create a reading list.
 
-Para ello, queremos desarrollar una aplicación web que permita a los usuarios ver los libros disponibles y crear una lista de lectura. Ten en cuenta que:
+To achieve this, we aim to develop a web application that allows users to view available books and create a reading list. Please note:
 
-- No sabemos si el framework que utilicemos ahora será el definitivo, pero querremos reutilizar el máximo de código posible.
-- La aplicación debe ser fácil de usar y agradable a la vista.
-- Tenemos un 80% de usuarios que vienen de navegadores de escritorio.
+- We are unsure if the framework we are currently using will be the final one, but we want to reuse as much code as possible.
+- The application should be user-friendly and visually appealing.
+- Approximately 80% of our users come from desktop browsers.
 
-Usa el archivo `books.json` para obtener los datos de los libros. Puedes añadir más libros si lo deseas, siempre y cuando siga la misma estructura.
+Use the `books.json` file to obtain book data. You can add more books if you wish, as long as they follow the same structure.
 
-## Requisitos
+## Requirements
 
-### Funcionalidad
+### Functionality
 
-1. **Visualización de Libros Disponibles**: La aplicación debe mostrar una lista de libros disponibles que el usuario pueda revisar.
+- [x] **Display Available Books**: The application must display a list of available books that users can review.
 
-2. **Creación de Lista de Lectura**: El usuario debe ser capaz de crear una lista de lectura a partir de los libros disponibles. En la UI debe quedar claro qué libros están en la lista de lectura y cuáles no. También debe ser posible mover un libro de la lista de lectura a la lista de disponibles.
+- [x] **Create a Reading List**: Users should be able to create a reading list from the available books. The UI should clearly indicate which books are in the reading list and which are not. It should also be possible to move a book from the reading list to the list of available books.
 
-3. **Filtrado de Libros por Género**: Los usuarios deben poder filtrar la lista de libros disponibles por género, y se mostrará un contador con el número de libros disponibles, el número de libros en la lista de lectura y el número de libros disponibles en el género seleccionado.
+- [x] **Filter Books by Genre**: Users should be able to filter the list of available books by genre, and a counter should display the number of available books, the number of books in the reading list, and the number of books available in the selected genre.
 
-4. **Sincronización de Estado**: Debe haber una sincronización del estado global que refleje el número de libros en la lista de lectura y el número de libros todavía disponibles. Si un libro se mueve de la lista de disponibles a la lista de lectura, el recuento de ambos debe actualizarse en consecuencia.
+- [x] **State Synchronization**: There should be global state synchronization that reflects the number of books in the reading list and the number of books still available. If a book is moved from the available list to the reading list, both counts should update accordingly.
 
-5. **Persistencia de Datos**: La aplicación debe persistir los datos de la lista de lectura en el almacenamiento local del navegador. Al recargar la página, la lista de lectura debe mantenerse.
+- [x] **Data Persistence**: The application should persist reading list data in the browser's local storage. When the page is reloaded, the reading list should be retained.
 
-6. **Sincronización entre pestañas**: Si el usuario abre la aplicación en dos pestañas diferentes, los cambios realizados en una pestaña deben reflejarse en la otra. Sin necesidad de usar Backend.
+- [ ] **Cross-Tab Synchronization**: If a user opens the application in two different tabs, changes made in one tab should be reflected in the other, without the need for a backend.
 
-7. **Despliegue**: La aplicación debe estar desplegada en algún servicio de hosting gratuito (Netlify, Vercel, Firebase, etc) y debe ser accesible a través de una URL pública. Indica la URL en el README.
+- [ ] **Deployment**: The application should be deployed on a free hosting service (Netlify, Vercel, Firebase, etc.) and should be accessible via a public URL. Provide the URL in the README.
 
-8. **Test**: La aplicación debe tener AL MENOS un test. Haz el test que consideres más importante para tu aplicación.
+- [ ] **Testing**: The application must have AT LEAST one test. Write the test you consider most important for your application.
 
-## Consejos sobre el código
+## Code Tips
 
-1. **Estructura del código**: El código debe estar bien organizado y fácil de leer.
+1. **Code Structure**: Your code should be well-organized and easy to read.
 
-2. **Semántica HTML**: El HTML debe ser semántico y accesible.
+2. **HTML Semantics**: HTML should be semantic and accessible.
 
-3. **Pensando en equipo**: Prepara tu proyecto pensando que cualquier persona de tu equipo puede tener que trabajar en él en el futuro. (scripts en el package.json, mínima documentación en el README, comentarios en el código si es necesario, etc)
+3. **Team-Oriented**: Prepare your project with the idea that anyone on your team may have to work on it in the future (scripts in package.json, minimal documentation in the README, code comments if necessary, etc.).
 
-4. **Formatea tu código**: Asegúrate de que tu código está formateado de forma consistente. Puedes usar Prettier o cualquier otra herramienta que te guste.
+4. **Code Formatting**: Ensure your code is consistently formatted. You can use Prettier or any other preferred formatting tool.
 
-5. **Preparado para producción**: Asegúrate de que tu aplicación está lista para producción. Minimiza el código, optimiza las imágenes, etc.
+5. **Production-Ready**: Make sure your application is production-ready. Minimize the code, optimize images, and so on.
 
-## Desafíos adicionales
+## Additional Challenges
 
-**¿Quieres ir más allá?** Estos son algunos desafíos adicionales que puedes intentar:
+**Want to go the extra mile?** Here are some additional challenges you can attempt:
 
-- Implementar una funcionalidad de búsqueda en la lista de libros disponibles.
-- Añade un nuevo filtro para filtrar los libros por número de páginas.
-- Permitir la reorganización de los libros en la lista de lectura por prioridad.
-- Haz que tu diseño sea responsive.
+- Implement a search feature in the list of available books.
+- Add a new filter to sort books by the number of pages.
+- Allow the reordering of books in the reading list by priority.
+- Make your design responsive.
 
-## Entrevista
 
-Si pasas a la siguiente fase, te pediremos que hagas una entrevista con nosotros. Durante la entrevista, te pediremos que expliques tu código y que hagas algunos cambios en el mismo.
-
-- Nos tendrás que explicar el código que has escrito y las decisiones que has tomado.
-- Haremos cambios en el JSON y tendrás que adaptar el código en vivo.
-- Añadiremos un nuevo filtro a la aplicación y tendrás que implementarlo.

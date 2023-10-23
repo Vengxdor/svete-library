@@ -1,17 +1,19 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import { useList } from '../hooks/useList'
-// import { books } from '../components/book'
-import { useFiltered } from '../hooks/useFiltered'
+import { useFiltered } from '../hooks/useFilter'
+import Books from '../books.json'
 
 export function BookList () {
   const { addToList, checkBookInList, removeFromList } = useList()
-  const { filteredLibrary } = useFiltered()
+  const { filterBooks } = useFiltered()
+  const library = Books.library
 
+  const filteredBooks = filterBooks(library)
   return (
     <>
       <ul className='books relative'>
-        {filteredLibrary.map((entry) => {
+        {filteredBooks.map((entry) => {
           const book = entry.book
           const isBookInList = checkBookInList(book)
           return (
@@ -23,19 +25,22 @@ export function BookList () {
                   alt={`cover of the movie ${book.title}`}
                 />
                 {isBookInList
-                  ? <button
-                className='absolute bottom-16 right-2 rounded-sm p-1 px-2 cursor-pointer z-10 bg-red-500 flex'
-                onClick={() => removeFromList(book)}
-              >
-                remove
-              </button>
-                  : <button
-                  className='absolute bottom-16 right-2 rounded-sm p-1 px-2 cursor-pointer z-10 bg-activeLight dark:bg-activeDark flex'
-                  onClick={() => addToList(book)}
-                >
-                  Add list
-                </button>
-                }
+                  ? (
+                  <button
+                    className='absolute bottom-16 right-2 rounded-sm p-1 px-2 cursor-pointer z-10 bg-red-500 flex'
+                    onClick={() => removeFromList(book)}
+                  >
+                    remove
+                  </button>
+                    )
+                  : (
+                  <button
+                    className='absolute bottom-16 right-2 rounded-sm p-1 px-2 cursor-pointer z-10 bg-activeLight dark:bg-activeDark flex'
+                    onClick={() => addToList(book)}
+                  >
+                    Add list
+                  </button>
+                    )}
               </div>
               <h4 className='truncate mt-2 dark:text-white'>{book.title}</h4>
               <span className='text-zinc-500'>{`${book.author.name} • ${book.year}`}</span>

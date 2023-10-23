@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { ListContext } from '../context/list'
+import { ListContext } from '../context/ListContext'
 
 export function useList () {
   const { listOfBooks, addToList, removeFromList } = useContext(ListContext)
